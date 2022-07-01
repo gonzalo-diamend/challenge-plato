@@ -1,17 +1,16 @@
 Test task: QA
 
 1. Automated tests — documentation site
-Write three automated tests for https://very-important.vercel.app/
-The link is to a website with documentation that may soon grow to hundreds of pages in
-size.
+   Write three automated tests for https://very-important.vercel.app/
+   The link is to a website with documentation that may soon grow to hundreds of pages in
+   size.
 
 1. Create a project using Playwright (preferably), Selenium, or another similar
-framework
-2. Write three automated tests
-3. Write down the bugs you find and questions you have in a markdown file
+   framework
+1. Write three automated tests
+1. Write down the bugs you find and questions you have in a markdown file
 
-We accept submissions implemented in JavaScript, TypeScript, Go, Python, or Java.
-2. Test design — HTTP API
+We accept submissions implemented in JavaScript, TypeScript, Go, Python, or Java. 2. Test design — HTTP API
 Here is the OpenAPI specification for internal employee management service:
 http-ems.yml
 

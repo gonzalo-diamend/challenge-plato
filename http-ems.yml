@@ -1,0 +1,85 @@
+
+
+openapi: 3.0.0
+info:
+title: Employee management system
+version: '1.0'
+contact:
+url: project-plato.com
+name: Project Plato
+description: Extremely complex internal system
+servers: []
+paths:
+'/employee/{employeeId}':
+parameters:
+- schema:
+type: string
+format: uuid
+name: employeeId
+in: path
+required: true
+get:
+summary: employee
+tags:
+- employee
+responses:
+'200':
+description: Employee Info
+content:
+application/json:
+schema:
+$ref: '#/components/schemas/Employee'
+examples: {}
+operationId: get-employee-info
+description: Get information about an Employee
+/employee:
+post:
+summary: create
+tags:
+- employee
+responses:
+'201':
+description: Created
+content:
+application/json:
+schema:
+type: object
+properties:
+employeeId:
+type: string
+format: uuid
+operationId: add-employee
+description: Create an Employee
+requestBody:
+content:
+
+Test task: QA 3
+
+application/json:
+schema:
+$ref: '#/components/schemas/Employee'
+examples:
+example:
+value:
+name: John Smith
+salary: 2000
+department: IT
+
+components:
+schemas:
+Employee:
+title: Employee
+type: object
+description: ''
+properties:
+fullName:
+type: string
+minLength: 2
+maxLength: 128
+salary:
+type: integer
+minimum: 900
+maximum: 9000
+department:
+type: string
+maxLength: 32

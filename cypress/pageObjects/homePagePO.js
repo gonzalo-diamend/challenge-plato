@@ -16,6 +16,9 @@ const subtitlePage2 = 'h3 > .text-current'
 const subtitleDescriptionPage2 = '.max-w-screen-md > :nth-child(4)';
 const backButtonPage2 = ':nth-child(1) > .text-lg';
 const nextButtonPage2 = ':nth-child(2) > .text-lg';
+const subtitlePage3 = 'max-w-screen-md > :nth-child(2)';
+const descriptionPage3 = 'max-w-screen-md > :nth-child(2)';
+const subDescriptionPage3 = 'max-w-screen-md > :nth-child(2)';
 
 //Data
 
@@ -35,15 +38,28 @@ const githubUrl = 'https://github.com/shuding/nextra'
         cy.doType(homeSearcher, 'Page');
         cy.beVisible(homeBackgroundCheck)
         cy.doClick(homeBackgroundCheck);
-        cy.beVisible(bodyTitle)
-        cy.beVisible(bodySubtitle)
-        cy.beVisible(bodyChangeLabel)
-        cy.beVisible(bodyEditText)
-        cy.beVisible(bodyCopyright)
+        cy.beVisible(homeGithubIcon);
+        cy.beVisible(bodyTitle);
+        cy.beVisible(bodySubtitle);
+        cy.beVisible(bodyDescription);
+        cy.beVisible(bodyChangeLabel);
+        cy.beVisible(bodyEditText);
+        cy.beVisible(bodyCopyright);
     }
 
     static changePageLabel(){    
-        cy.beVisible(bodyChangeLabel)
-        cy.doClick(bodyChangeLabel)
+        cy.beVisible(bodyChangeLabel);
+        cy.beVisible(bodyTitle);
+        cy.beVisible(bodySubtitle);
+        cy.doClick(bodyChangeLabel);
+        cy.beVisible(bodyTitle);
+        cy.beVisible(subtitlePage2);
+        cy.beVisible(descriptionPage2);
+        cy.beVisible(subtitleDescriptionPage2);
+        cy.beVisible(backButtonPage2);
+        cy.doClick(backButtonPage2);
+        cy.doClick(bodyChangeLabel);
+        cy.beVisible(nextButtonPage2);
+        cy.doClick(nextButtonPage2);
     }
 }
